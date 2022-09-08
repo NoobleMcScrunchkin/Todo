@@ -3,29 +3,23 @@ import LayoutContainer from "../../layouts/LayoutContainer.astro";
 ---
 
 <LayoutContainer>
-  <div class="text-xl w-full border-b border-zinc-200 py-2 pl-2">Projects</div>
-  <ul class="mt-4">
-    {
-      [...Array(Math.floor(2 + Math.random() * 8)).keys()].map(
-        (project, index) => (
-          <li class={"border-zinc-200 py-2 pl-2 " + (index != 0 && "border-t")}>
-            <a href="/projects/projectuuid">
-              <div class="flex flex-row h-12 hover:bg-zinc-100 rounded">
-                <div class="h-full p-2">
-                  <img
-                    class="h-full aspect-square rounded"
-                    src="/svg/projects/project.svg"
-                    alt="project name"
-                  />
-                </div>
-                <div class="ml-2 flex justify-center align-middle flex-col h-full">
-                  <div>Project Name</div>
-                </div>
-              </div>
-            </a>
-          </li>
-        )
-      )
-    }
-  </ul>
+	<div class="text-xl w-full border-b border-zinc-200 py-2 pl-2">Projects</div>
+	<ul class="mt-4">
+		{
+			[...Array(Math.floor(2 + Math.random() * 8)).keys()].map((project, index) => (
+				<li class={"border-zinc-200 py-2 pl-2 " + (index != 0 && "border-t")}>
+					<a href="/projects/projectuuid">
+						<div class="flex flex-row h-12 hover:bg-zinc-100 rounded">
+							<div class="h-full p-2">
+								<img class="h-full aspect-square rounded" src="/svg/projects/project.svg" alt="project name" />
+							</div>
+							<div class="ml-2 flex justify-center align-middle flex-col h-full">
+								<div>Project Name</div>
+							</div>
+						</div>
+					</a>
+				</li>
+			))
+		}
+	</ul>
 </LayoutContainer>
