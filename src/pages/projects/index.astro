@@ -1,20 +1,22 @@
 ---
 import LayoutContainer from "../../layouts/LayoutContainer.astro";
+import Project from "../../db/models/projects.js";
+let projects = (await Project.findAll()).map((project: typeof Project) => project.dataValues);
 ---
 
 <LayoutContainer>
-	<div class="text-xl w-full border-b border-zinc-200 py-2 pl-2">Projects</div>
-	<ul class="mt-4">
+	<div class="page-title">Projects</div>
+	<ul class="project-list">
 		{
-			[...Array(Math.floor(2 + Math.random() * 8)).keys()].map((project, index) => (
-				<li class={"border-zinc-200 py-2 pl-2 " + (index != 0 && "border-t")}>
-					<a href="/projects/projectuuid">
-						<div class="flex flex-row h-12 hover:bg-zinc-100 rounded">
-							<div class="h-full p-2">
-								<img class="h-full aspect-square rounded" src="/svg/projects/project.svg" alt="project name" />
+			projects.map((project: any, index: number) => (
+				<li class="project" style={index == 0 ? "border-top: none;" : ""}>
+					<a href={"/projects/" + project.uuid}>
+						<div class="project-wrapper">
+							<div class="project-image">
+								<img src="/svg/projects/project.svg" alt={project.name} />
 							</div>
-							<div class="ml-2 flex justify-center align-middle flex-col h-full">
-								<div>Project Name</div>
+							<div class="project-info">
+								<div>{project.name}</div>
 							</div>
 						</div>
 					</a>

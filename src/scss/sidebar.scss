@@ -1,0 +1,36 @@
+.sidebar {
+	width: 16rem;
+	min-width: 16rem;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	.project-info {
+		margin-top: 0.5rem;
+		margin-left: 1rem;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	.links {
+		overflow: scroll;
+		flex-grow: 1;
+
+		.link {
+			a {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				vertical-align: middle;
+				margin: 0.5rem;
+				padding: 1rem;
+				border-radius: 0.25rem;
+			}
+
+			a.active,
+			a:hover {
+				background-color: var(--grey-100);
+			}
+		}
+	}
+}

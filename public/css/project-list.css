@@ -1,0 +1,28 @@
+.project-list {
+  margin-top: 1rem; }
+  .project-list .project {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    border-top: 1px solid var(--grey-200); }
+    .project-list .project .project-wrapper {
+      display: flex;
+      flex-direction: row;
+      height: 3rem;
+      border-radius: 0.25rem; }
+      .project-list .project .project-wrapper .project-image {
+        padding: 0.5rem;
+        height: 100%; }
+        .project-list .project .project-wrapper .project-image img {
+          height: 100%;
+          aspect-ratio: 1;
+          border-radius: 0.25rem; }
+      .project-list .project .project-wrapper .project-info {
+        margin-left: 0.5rem;
+        display: flex;
+        justify-content: center;
+        vertical-align: middle;
+        flex-direction: column;
+        height: 100%; }
+    .project-list .project .project-wrapper:hover {
+      background-color: var(--grey-100); }

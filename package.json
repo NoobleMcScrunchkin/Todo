@@ -8,12 +8,18 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "watch": "npx tailwindcss -i ./src/css/main.css -o ./public/css/main.css --watch",
-    "astro": "astro"
+    "astro": "astro",
+    "build-css": "node-sass ./src/scss/main.scss -o ./public/css/",
+    "watch-css": "node-sass -w -r ./src/scss/ -o ./public/css/",
+    "sync": "node ./src/db/sync.js"
   },
   "dependencies": {
     "astro": "^1.1.7",
-    "express": "^4.18.1"
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.6"
   },
   "devDependencies": {
     "@astrojs/netlify": "^1.0.2",

@@ -1,0 +1,132 @@
+@import "./colors.scss";
+@import "./header.scss";
+@import "./kanban.scss";
+@import "./project-list.scss";
+@import "./sidebar.scss";
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-weight: 500;
+	color: var(--grey-800);
+	font-family: "Monserrat", sans-serif;
+	height: 100%;
+}
+
+a {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+ul,
+ol {
+	list-style: none;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+	padding-inline-start: 0;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #555;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.shadow {
+	--tw-shadow: 3px 1px 3px 0 rgb(0 0 0 / 0.1), 2px 1px 2px -1px rgb(0 0 0 / 0.1);
+	--tw-shadow-colored: 3px 1px 3px 0 var(--tw-shadow-color), 2px 1px 2px -1px var(--tw-shadow-color);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+#main {
+	flex-grow: 1;
+	overflow-y: scroll;
+	height: 100%;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	background-color: white;
+	margin-top: 0.5rem;
+	border-radius: 0.25rem;
+	padding: 1rem;
+}
+
+@media (min-width: 640px) {
+	.container {
+		max-width: 640px;
+	}
+}
+
+@media (min-width: 768px) {
+	.container {
+		max-width: 768px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.container {
+		max-width: 1024px;
+	}
+}
+
+@media (min-width: 1280px) {
+	.container {
+		max-width: 1280px;
+	}
+}
+
+@media (min-width: 1536px) {
+	.container {
+		max-width: 1536px;
+	}
+}
+
+.page-title {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+	width: 100%;
+	border-bottom: 1px solid var(--grey-200);
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 0.5rem;
+}
+
+.project-container {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+}
